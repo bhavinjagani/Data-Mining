@@ -130,8 +130,7 @@ def query(qstring):
     
     # If no candidate documents, return ("None", 0)
     if not candidate_docs:
-        return ("None", 0)
-    
+        return ("None", 0,"None")
     # Calculate actual scores and upper-bound scores for candidate documents
     actual_scores = {}
     upper_bound_scores = {}
@@ -173,7 +172,7 @@ def query(qstring):
         return (best_doc, best_score,"GUARANTEED WINNER")
     else:
         # If no document satisfies the condition, return ("fetch more", 0)
-        return ("fetch more", 0)
+        return ("fetch more", 0,"Need More")
 
 #query1 - calculating IDF
 
